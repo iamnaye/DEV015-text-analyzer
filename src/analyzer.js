@@ -1,22 +1,26 @@
-const analyzer = {  
-  getWordCount: (text) => {
-    //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
-  },
-  getCharacterCount: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
-  },
-  getCharacterCountExcludingSpaces: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
-  },
-  getAverageWordLength: (text) => {    
-    //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
-  },
-  getNumberCount: (text) => {
-    //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
-  },
-  getNumberSum: (text) => {
-    //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
-  },
-};
-
-export default analyzer;
+const analyzer = {
+    getWordCount: (text) => {
+      const words = text.trim().split(/\s+/).filter(word => word !== '');
+      return words.length;
+    },
+    getCharacterCount: (text) => {
+      return text.length;
+    },
+    getCharacterCountExcludingSpaces: (text) => {
+      return text.replace(/[^\w]|_/g, '').length;
+    },
+    getAverageWordLength: (text) => {
+      // Implementación pendiente
+    },
+    getNumberCount: (text) => {
+      // Implementación pendiente
+    },
+    getNumberSum: (text) => {
+      // Implementación pendiente
+    },
+  };
+  
+  
+  export default analyzer;
+  
+  
