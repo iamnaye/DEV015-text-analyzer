@@ -1,16 +1,19 @@
 import analyzer from './analyzer.js';
 
+
 // Seleccionar los elementos del DOM
 const textareaElement = document.querySelector('textarea[name="user-input"]');
 const wordCountElement = document.querySelector('.word-count');
 const charCountElement = document.querySelector('.char-count');
 const charCountExcludingSpacesElement = document.querySelector('.char-count-excluding-spaces');
 
+
 // Debug para verificar selección
 console.log("Textarea Element:", textareaElement);
 console.log("Word Count Element:", wordCountElement);
 console.log("Char Count Element:", charCountElement);
 console.log("Char Count Excluding Spaces Element:", charCountExcludingSpacesElement);
+
 
 // Función para actualizar el conteo de palabras en la UI
 function updateWordCount() {
@@ -20,19 +23,21 @@ function updateWordCount() {
   console.log("Recuento de palabras:", wordCount); // Debug
  
     wordCountElement.textContent = wordCount;
-  
+ 
 }
+
 
 // Función para actualizar el conteo de caracteres en la UI
 function updateCharCount() {
   const text = textareaElement.value;
   const charCount = analyzer.getCharacterCount(text);
-  console.log("Texto actual (char count):", text); // Debug
+  console.log("Texto actual (char count):", text); // Debug  
   console.log("Recuento de caracteres:", charCount); // Debug
  
   charCountElement.textContent = charCount;
-  
+ 
 }
+
 
 // Función para actualizar el conteo de caracteres excluyendo espacios y signos de puntuación en la UI
 function updateCharCountExcludingSpaces() {
@@ -43,8 +48,9 @@ function updateCharCountExcludingSpaces() {
  
     charCountExcludingSpacesElement.textContent = charCountExcludingSpaces;
  ;
-  
+ 
 }
+
 
 // Añadir el event listener al textarea para actualizar el conteo en tiempo real
 textareaElement.addEventListener('input', () => {
@@ -53,10 +59,12 @@ textareaElement.addEventListener('input', () => {
   updateCharCountExcludingSpaces();
 });
 
+
 // Llamar a las funciones de actualización una vez al inicio para el caso de que haya texto inicial
 updateWordCount();
 updateCharCount();
 updateCharCountExcludingSpaces();
+
 
 // Función para borrar el texto ingresado y actualizar el contador
 document.getElementById('reset-button').addEventListener('click', function() {
