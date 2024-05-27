@@ -22,7 +22,7 @@ function updateWordCount() {
   console.log("Texto actual (word count):", text); // Debug
   console.log("Recuento de palabras:", wordCount); // Debug
  
-    wordCountElement.textContent = wordCount;
+    wordCountElement.textContent = wordCount;  
  
 }
 
