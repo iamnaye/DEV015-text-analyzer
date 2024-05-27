@@ -6,6 +6,7 @@ const textareaElement = document.querySelector('textarea[name="user-input"]');
 const wordCountElement = document.querySelector('.word-count');
 const charCountElement = document.querySelector('.char-count');
 const charCountExcludingSpacesElement = document.querySelector('.char-count-excluding-spaces');
+const numberCountElement = document.querySelector('.num-count');
 
 
 // Debug para verificar selección
@@ -51,12 +52,24 @@ function updateCharCountExcludingSpaces() {
  
 }
 
+//Función para contar los números
+
+function updateNumberCount() {
+
+    const text = textareaElement.value;
+    const numberCount = analyzer.getNumberCount(text);
+    console.log ("Texto actual (conteo numeros):", text); 
+    console.log ("Recuento de numeros:", numberCount);
+    numberCountElement.textContent = numberCount;
+}
+
 
 // Añadir el event listener al textarea para actualizar el conteo en tiempo real
 textareaElement.addEventListener('input', () => {
   updateWordCount();
   updateCharCount();
   updateCharCountExcludingSpaces();
+  updateNumberCount();
 });
 
 
@@ -64,6 +77,7 @@ textareaElement.addEventListener('input', () => {
 updateWordCount();
 updateCharCount();
 updateCharCountExcludingSpaces();
+updateNumberCount();
 
 
 // Función para borrar el texto ingresado y actualizar el contador
@@ -72,4 +86,5 @@ document.getElementById('reset-button').addEventListener('click', function() {
   updateWordCount(); // Asegurarse de actualizar el conteo después de borrar
   updateCharCount(); // Asegurarse de actualizar el conteo después de borrar
   updateCharCountExcludingSpaces();
+  updateNumberCount();
 });
