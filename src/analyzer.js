@@ -36,6 +36,9 @@ const analyzer = {
     
     getNumberSum: (text) => {
       
+      const numbers = text.match(/\d+/g) || [];
+    const sum = numbers.reduce((acc, num) => acc + parseInt(num, 10), 0);
+    return sum;;
     },
     }
   
