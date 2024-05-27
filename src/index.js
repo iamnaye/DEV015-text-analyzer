@@ -7,6 +7,7 @@ const wordCountElement = document.querySelector('.word-count');
 const charCountElement = document.querySelector('.char-count');
 const charCountExcludingSpacesElement = document.querySelector('.char-count-excluding-spaces');
 const numberCountElement = document.querySelector('.num-count');
+const averageWordLengthElement = document.querySelector ('.av-length');
 
 
 // Debug para verificar selección
@@ -64,12 +65,23 @@ function updateNumberCount() {
 }
 
 
+// Función para el promedio de longitud de palabras
+
+function updateAvWordLength() {
+  const text = textareaElement.value;
+  const avWordLength = analyzer.getAverageWordLength(text);
+  console.log ("Texto actual (promedio longitud palabras):", text); 
+    console.log ("Promedio Palabras:", avWordLength);
+    averageWordLengthElement.textContent = avWordLength;
+}
+
 // Añadir el event listener al textarea para actualizar el conteo en tiempo real
 textareaElement.addEventListener('input', () => {
   updateWordCount();
   updateCharCount();
   updateCharCountExcludingSpaces();
   updateNumberCount();
+  updateAvWordLength();
 });
 
 
@@ -78,6 +90,7 @@ updateWordCount();
 updateCharCount();
 updateCharCountExcludingSpaces();
 updateNumberCount();
+updateAvWordLength();
 
 
 // Función para borrar el texto ingresado y actualizar el contador
@@ -87,4 +100,5 @@ document.getElementById('reset-button').addEventListener('click', function() {
   updateCharCount(); // Asegurarse de actualizar el conteo después de borrar
   updateCharCountExcludingSpaces();
   updateNumberCount();
+  updateAvWordLength();
 });

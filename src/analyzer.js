@@ -14,9 +14,18 @@ const analyzer = {
       return text.replace(/[^\w]|_/g, '').length;
     },
 
-    getAverageWordLength: (text) => {
-      
-    },
+    getAverageWordLength: (text) => { 
+      const words = text.trim().split(/\s+/).filter(word => word !== '');
+      //convierto la lista de valores en un único valor
+      const totalLength = words.reduce((acc, word) => acc + word.length, 0);
+      if (words.length > 0) {
+        return totalLength / words.length;
+    } else {
+        return 0;
+    }
+  },
+
+  
 
     getNumberCount: (text) => {
         // primero defino qué es un número
@@ -26,9 +35,10 @@ const analyzer = {
     },
     
     getNumberSum: (text) => {
-      // Implementación pendiente
+      
     },
-  };
+    }
+  
   
   
   export default analyzer;
