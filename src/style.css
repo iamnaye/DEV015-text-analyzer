@@ -3,18 +3,23 @@ body
 {
   background-color: #038F9B;
   margin:0;
+  font-family: "Cardo", serif;
 }
 
 
 
 
+
+
 header {
-    color: #3E3F3F;
+    color: whitesmoke;
     padding: 1px 30px;
-    background-color:#FFFFFF;
+    background-color:black;
     width:100%;
     margin:0;
     border-bottom: 1px solid #E0E0E0
+    font-family:"Cardo", serif;
+  
   
   }
 
@@ -22,7 +27,7 @@ header {
   
   
   footer
-  {background-color: #3E3F3F;
+  {background-color: black;
   color: white;
   border-radius: 10px;
   padding: 20px;
@@ -36,12 +41,13 @@ header {
     margin: 0 auto;
     width: 1000px;
     height: 250px;
+    font-family: "Cardo", serif;
   
   }
   
   
   #reset-button {
-    background-color: #3E3F3F;
+    background-color: black;
     /*Esto centra el botón*/
     margin: 0 auto;
     display: flex;
@@ -54,6 +60,7 @@ header {
     justify-content: center; /* Centra content horizontalmente */
     font-weight:bold;
     transition: background-color 0.5s linear;
+    font-family: "Cardo", serif;
     
   }
   
