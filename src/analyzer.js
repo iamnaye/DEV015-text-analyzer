@@ -20,10 +20,11 @@ const analyzer = {
     //convierto la lista de valores en un único valor
     const totalLength = words.reduce((acc, word) => acc + word.length, 0);
     if (words.length > 0) {
-      return totalLength / words.length;
+      return (totalLength / words.length).toFixed(2);
     } else {
-      return 0;
+      return '0';
     }
+  
   },
 
   
@@ -41,6 +42,7 @@ const analyzer = {
     let sum = 0;
     for (let i = 0; i < numbers.length; i++) { // bucle for para sumar todos los números
       sum += parseInt(numbers[i], 10);
+      
     }
     
     return sum;
