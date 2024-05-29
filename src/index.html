@@ -7,20 +7,20 @@
 </head>
 <body>
   <header>
-    <h1>Analizador de texto</h1>
+    <h1>Analizador de Texto</h1>
   </header> <br> <br>
 
   <section>
-    <ul>
-      <li class="label">Palabras: <span class="word-count">0</span></li>
-      <li class="label">Caracteres: <span class="char-count">0</span></li>
-      <li class="label">Caracteres (sin espacios ni signos de puntuación): <span class="char-count-excluding-spaces">0</span></li>
-      <li class="label">Recuento de números: <span class="num-count">0</span></li>
-      <li class="label">Suma total de números: <span class="num-sum">0</span></li>
-      <li class="label">Longitud media de las palabras: <span class="av-length">0</span></li>
+     <ul>
+      <li class="label" data-testid="word-count">Palabras <br><br><span class="word-count">0</span></li>
+      <li class="label" data-testid="character-count">Caracteres<br><br> <span class="char-count">0</span></li>
+      <li class="label" data-testid="character-no-spaces-count">Caracteres (sin espacios ni signos de puntuación)<br> <span class="char-count-excluding-spaces">0</span></li>
+      <li class="label" data-testid="number-count">Recuento de números<br> <span class="num-count">0</span></li>
+      <li class="label" data-testid="number-sum">Suma total de números <br><span class="num-sum">0</span></li>
+      <li class="label" data-testid="word-length-average">Longitud media de las palabras<br> <span class="av-length">0</span></li>
     </ul>
   </section>
-  
+  <br>
   <section>
     <textarea name="user-input" placeholder="Ingresa tu texto aquí" rows="15" cols="50"></textarea>
   </section>

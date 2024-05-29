@@ -1,10 +1,15 @@
 
+body
+{
+  background-color: #038F9B;
+  margin:0;
+}
+
+
 
 
 header {
     color: #3E3F3F;
-    
-    /* Padding 1 -TopAndBottom - Padding 2 - LeftAndRight */
     padding: 1px 30px;
     background-color:#FFFFFF;
     width:100%;
@@ -12,51 +17,25 @@ header {
     border-bottom: 1px solid #E0E0E0
   
   }
+
   
   
-  
-  span.highlight
-  {
-    background-color: yellow;
-  }
-  
-  .counters
-  {font-weight:bold;
-  }
-  
-  .blue.counters
-  {
-   color: blue; 
-  }
-  
-  
-  #one {
-  Background-color: pink;
-  Color:blue;
-  Text-decoration: underline;
-  }
-  
-  #two
-  {
-    Background-color:green;
-    Color:white;
-  }
   
   footer
   {background-color: #3E3F3F;
   color: white;
   border-radius: 10px;
-    padding: 20px;
+  padding: 20px;
   }
   
-  [name="user-input"] {
+  textarea[name="user-input"] {
     background-color: white;
     border: 1px solid #E0E0E0;
     border-radius:10px;
     display: flex;
     margin: 0 auto;
     width: 1000px;
-      height: 250px;
+    height: 250px;
   
   }
   
@@ -69,8 +48,8 @@ header {
     /*Hasta acá*/
     color: white;
     border-radius: 10px ;
-    width: 100px;
-    height: 30px;
+    width: 150px;
+    height: 40px;
     align-items: center; /* Centra content verticalmente */
     justify-content: center; /* Centra content horizontalmente */
     font-weight:bold;
@@ -83,14 +62,14 @@ header {
   }
   
   ul {
-      list-style-type:none;
+    list-style-type:none;
     text-align: center;
     display: flex;
     padding: 20px;
-      background-color: #FFFFFF;
+    background-color: #FFFFFF;
     justify-content: space-around;
     width: 1000px;
-      margin: 0 auto;
+    margin: 0 auto;
     border-radius: 10px;
     border-bottom: 1px solid #E0E0E0
     
@@ -98,34 +77,29 @@ header {
     
     }
   
-  li {
+  .label {
       display: inline-block;
       margin-right: 20px; 
-  }
-  
-  .label
-  {
-    color:#3E3F3F;
+      padding: 10px;
+      border-width: thin;
+      border-style: solid;
+      border-color: #038F9B;
+       color:#3E3F3F;
     font-weight:bold;
+    border-radius: 20px;
+  
+   
   }
   
-  .number
-  {
-   color:blue 
-  }
-  .word-count, .char-count, .char-count-excluding-spaces, .num-count, .num-sum, .av-lenght  {
-    border: 1px solid gray; /* Borde rojo temporal para depuración */
-    padding: 5px; /* Añadir padding para asegurarnos de que haya espacio */
+ 
+  
+  .word-count, .char-count, .char-count-excluding-spaces, .num-count, .num-sum, .av-length  {
+    padding: 5px;
+    display: inline-block; 
+    min-width: 20px; 
+    text-align: center;
+    color: #038F9B;
+    font-size: 30px;
 }
 
-/* Asegurar visibilidad y tamaño */
-.word-count, .char-count, .char-count-excluding-spaces, .num-count, .num-sum, .av-lenght {
-    display: inline-block; /* Asegurar que se muestren en línea */
-    min-width: 20px; /* Asegurar un ancho mínimo */
-    text-align: center;
-  }
 
-  body
-  {
-    background-color: #F5F5F5;
-  }

@@ -25,7 +25,7 @@ function updateWordCount() {
   console.log("Texto actual (word count):", text); // Debug
   console.log("Recuento de palabras:", wordCount); // Debug
  
-    wordCountElement.textContent = wordCount;  
+  wordCountElement.textContent = wordCount;  
  
 }
 
@@ -49,8 +49,8 @@ function updateCharCountExcludingSpaces() {
   console.log("Texto actual (char count excluding spaces):", text); // Debug
   console.log("Recuento de caracteres excluyendo espacios y signos de puntuación:", charCountExcludingSpaces); // Debug
  
-    charCountExcludingSpacesElement.textContent = charCountExcludingSpaces;
- ;
+  charCountExcludingSpacesElement.textContent = charCountExcludingSpaces;
+  
  
 }
 
@@ -58,11 +58,11 @@ function updateCharCountExcludingSpaces() {
 
 function updateNumberCount() {
 
-    const text = textareaElement.value;
-    const numberCount = analyzer.getNumberCount(text);
-    console.log ("Texto actual (conteo numeros):", text); 
-    console.log ("Recuento de numeros:", numberCount);
-    numberCountElement.textContent = numberCount;
+  const text = textareaElement.value;
+  const numberCount = analyzer.getNumberCount(text);
+  console.log ("Texto actual (conteo numeros):", text); 
+  console.log ("Recuento de numeros:", numberCount);
+  numberCountElement.textContent = numberCount;
 }
 
 
@@ -72,8 +72,8 @@ function updateAvWordLength() {
   const text = textareaElement.value;
   const avWordLength = analyzer.getAverageWordLength(text);
   console.log ("Texto actual (promedio longitud palabras):", text); 
-    console.log ("Promedio Palabras:", avWordLength);
-    averageWordLengthElement.textContent = avWordLength;
+  console.log ("Promedio Palabras:", avWordLength);
+  averageWordLengthElement.textContent = avWordLength;
 }
 
 //Función para medir la suma de los números ingresados
@@ -82,8 +82,8 @@ function updateNumberSum() {
   const text = textareaElement.value;
   const numberSum = analyzer.getNumberSum(text);
   console.log ("Texto actual (suma numeros):", text); 
-    console.log ("Suma numeros:", numberSum);
-    numberSumElement.textContent = numberSum;
+  console.log ("Suma numeros:", numberSum);
+  numberSumElement.textContent = numberSum;
 
 }
 
@@ -110,8 +110,8 @@ updateNumberSum();
 // Función para borrar el texto ingresado y actualizar el contador
 document.getElementById('reset-button').addEventListener('click', function() {
   textareaElement.value = '';
-  updateWordCount(); // Asegurarse de actualizar el conteo después de borrar
-  updateCharCount(); // Asegurarse de actualizar el conteo después de borrar
+  updateWordCount(); 
+  updateCharCount(); 
   updateCharCountExcludingSpaces();
   updateNumberCount();
   updateAvWordLength();
