@@ -1,8 +1,10 @@
 const analyzer = {
   getWordCount: (text) => { //primero defino qué es una palabra
-    const words = text.trim().split(/\s+/).filter(word => word !== '');
-    return words.length;
+    const words = text.trim().split(/\s+/). filter(word => word !== '' && !/^\d+$/.test(word)); //exp regular para whitespace character(uno o varios)
+   
+    return words.length; 
   },
+
 
 
   getCharacterCount: (text) => {
@@ -11,14 +13,21 @@ const analyzer = {
 
 
   getCharacterCountExcludingSpaces: (text) => {
-    return text.replace(/[^\w]|_/g, '').length;
+    //Uso exp regular para excluir mis non-word characters
+    return text.replace(/\W|_/g, '').length;
   },
 
 
   getAverageWordLength: (text) => { 
-    const words = text.trim().split(/\s+/).filter(word => word !== '');
-    //convierto la lista de valores en un único valor
-    const totalLength = words.reduce((acc, word) => acc + word.length, 0);
+    const words = text.trim().split(/\s+/). filter(word => word !== '' && !/^\d+$/.test(word)); 
+    let totalLength = 0; //inicio variable para almacenar suma length
+    
+    // Primero calculo con bucle la longitud total
+    for (let i = 0; i < words.length; i++) {
+      //uso el acumulador += para ir almacenando la longitud en mi variable totalLength
+      totalLength += words[i].length;
+    }
+  
     if (words.length > 0) {
       return (totalLength / words.length).toFixed(2);
     } else {
@@ -38,15 +47,16 @@ const analyzer = {
 
   getNumberSum: (text) => {
       
-    const numbers = text.match(/\d+/g) || [];
+    const numbers = text.match(/\d+/g) || []; //asigno array vacío si no encuentro num
     let sum = 0;
     for (let i = 0; i < numbers.length; i++) { // bucle for para sumar todos los números
-      sum += parseInt(numbers[i], 10);
+      sum += Number(numbers[i]);
       
     }
     
     return sum;
   },
+
 }
   
   
