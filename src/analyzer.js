@@ -29,7 +29,7 @@ const analyzer = {
     }
   
     if (words.length > 0) {
-      return (totalLength / words.length).toFixed(2);
+      return parseFloat ((totalLength / words.length).toFixed(2));
     } else {
       return '0';
     }
@@ -40,14 +40,14 @@ const analyzer = {
   getNumberCount: (text) => {
     // primero defino qué es un número
 
-    const numbers = text.match(/\d+/g) || [];
-    return numbers.length;
+    const numbers = text.match(/\b\d+(\.\d+)?\b/g) || [];
+    return numbers ? numbers.length : 0;
   },
     
 
   getNumberSum: (text) => {
       
-    const numbers = text.match(/\d+/g) || []; //asigno array vacío si no encuentro num
+    const numbers = text.match(/\b\d+(\.\d+)?\b/g) || []; //asigno array vacío si no encuentro num
     let sum = 0;
     for (let i = 0; i < numbers.length; i++) { // bucle for para sumar todos los números
       sum += Number(numbers[i]);
